@@ -116,8 +116,8 @@ This will:
 
 | Method | Test Accuracy |
 |--------|---------------|
-| CLIP + LSTM | 53% |
-| SigLIP + LSTM | 50% |
+| CLIP + LSTM | 52% |
+| SigLIP + LSTM | 53% |
 | VideoMAE | 66.05% |
 
 ## Acknowledgments

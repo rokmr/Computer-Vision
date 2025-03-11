@@ -145,6 +145,7 @@ class VideoDatasetProcessor:
 def main():
     try:
         processor = VideoDatasetProcessor()
+        breakpoint()
         processor.download_and_extract()
         stats = processor.get_video_statistics()
         processor.extract_frames()

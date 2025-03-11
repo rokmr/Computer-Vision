@@ -34,6 +34,7 @@ class Embedder:
         self.dataset_root_path = args.dataset_root_path
         self.frame_dir = args.frame_dir
         self.base_path = args.base_path
+        self.label_mapping = args.label_mapping
         self._make_output_dirs()
 
     def _make_output_dirs(self):
@@ -93,39 +94,34 @@ class Embedder:
             logger.info(f"Loading embeddings and labels for {embeddings_folder}")
             embeddings = []
             labels = []
-            label_mapping = {}  # To convert class names to numerical labels
-            current_label = 0
             class_folders = [f.path for f in os.scandir(embeddings_folder) if f.is_dir()]
             logger.info(f"Found {len(class_folders)} classes")
             for class_folder in class_folders:
                 if os.path.isdir(class_folder):
-                    if class_folder not in label_mapping:
-                        class_name = os.path.basename(class_folder)
-                        label_mapping[class_name] = current_label
-                        current_label += 1
+                    class_name = os.path.basename(class_folder)
                     for emb_file in sorted(os.listdir(class_folder)):
                         if emb_file.endswith('_embedding.npy'):
                             emb_path = os.path.join(class_folder, emb_file)
                             embeddings.append(np.load(emb_path))
-                            labels.append(label_mapping[class_name])
+                            labels.append(self.label_mapping[class_name])
             embeddings = torch.tensor(embeddings, dtype=torch.float32)
             labels = torch.tensor(labels, dtype=torch.long)
-            return embeddings, labels, label_mapping
+            return embeddings, labels
         except Exception as e:
             logger.error(f"Error while loading embeddings and labels: {e}")
             raise
     
     def _create_datasets(self):
-        train_embeddings, train_labels, class_label_mapping = self._load_embeddings_and_labels(os.path.join(self.embeddings_folder, 'train'))
-        val_embeddings, val_labels, _ = self._load_embeddings_and_labels(os.path.join(self.embeddings_folder, 'val')) 
-        test_embeddings, test_labels, _ = self._load_embeddings_and_labels(os.path.join(self.embeddings_folder, 'test'))
+        train_embeddings, train_labels = self._load_embeddings_and_labels(os.path.join(self.embeddings_folder, 'train'))
+        val_embeddings, val_labels = self._load_embeddings_and_labels(os.path.join(self.embeddings_folder, 'val')) 
+        test_embeddings, test_labels = self._load_embeddings_and_labels(os.path.join(self.embeddings_folder, 'test'))
         logger.info(f"Train embeddings shape: {train_embeddings.shape} || Val embeddings shape: {val_embeddings.shape} || Test embeddings shape: {test_embeddings.shape}")
 
         try:
             train_dataset = TensorDataset(train_embeddings.unsqueeze(1), train_labels)
             val_dataset = TensorDataset(val_embeddings.unsqueeze(1), val_labels)
             test_dataset = TensorDataset(test_embeddings.unsqueeze(1), test_labels)
-            return train_dataset, val_dataset, test_dataset, class_label_mapping
+            return train_dataset, val_dataset, test_dataset
         except Exception as e:
             logger.error(f"Error while creating datasets: {e}")
             raise
@@ -213,9 +209,10 @@ def test_model(model, test_loader, class_label_mapping, device):
 
 def main(args):
     embedder = Embedder(args)
+    class_label_mapping = embedder.label_mapping
     if args.create_embeddings:
         embedder._create_embeddings()
-    train_dataset, val_dataset, test_dataset, class_label_mapping = embedder._create_datasets()
+    train_dataset, val_dataset, test_dataset = embedder._create_datasets()
     device = embedder.device
     logger.info(f"Loading data: training samples: {len(train_dataset)} || validation samples: {len(val_dataset)} || test samples: {len(test_dataset)}")
     train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True)
@@ -249,4 +246,5 @@ if __name__ == "__main__":
     args.dataset_root_path = video_data.dataset_root_path
     args.frame_dir = video_data.frame_dir
     args.base_path = video_data.base_path
+    args.label_mapping = video_data.label_to_idx
     main(args)
