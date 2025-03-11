@@ -186,3 +186,5 @@ data/
 /cricketshot
 
 *.DS_Store
+logs/
+*.log
