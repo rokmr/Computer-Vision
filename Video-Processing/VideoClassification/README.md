@@ -40,6 +40,9 @@ VideoClassification/
 └── README.md
 ```
 
+## Dataset 
+For this project athe dataset is created and published at [rokmr/cricketshot-predictor](https://huggingface.co/datasets/rokmr/cricket-shot) on huggingface 🤗.
+
 ## Usage
 
 ### 1. Dataset Processing
