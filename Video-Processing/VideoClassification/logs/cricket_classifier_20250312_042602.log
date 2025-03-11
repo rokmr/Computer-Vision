@@ -1,0 +1,108 @@
+src/data.py:14 - 2025-03-12 04:26:02 - INFO - Initializing VideoDatasetProcessor with dataset_id=rokmr/cricket-shot, filename=cricketshot.tar.gz
+src/data.py:29 - 2025-03-12 04:26:02 - INFO - Creating directories for data processing
+src/data.py:41 - 2025-03-12 04:26:02 - INFO - Found 10 classes: cover, defense, flick, hook, late_cut, lofted, pull, square_cut, straight, sweep
+src/embed_lstm.py:245 - 2025-03-12 04:26:02 - INFO - Args: Namespace(model_id='google/siglip-base-patch16-224', embed_size=768, create_embeddings=False, lr=0.001, save_model_path='./siglip-cricket-classifier.pt', num_epochs=50)
+src/embed_lstm.py:26 - 2025-03-12 04:26:02 - INFO - Loading model: google/siglip-base-patch16-224
+src/embed_lstm.py:94 - 2025-03-12 04:26:06 - INFO - Loading embeddings and labels for ./data/google/siglip-base-patch16-224/frames_embeddings/train
+src/embed_lstm.py:98 - 2025-03-12 04:26:06 - INFO - Found 10 classes
+src/embed_lstm.py:94 - 2025-03-12 04:26:09 - INFO - Loading embeddings and labels for ./data/google/siglip-base-patch16-224/frames_embeddings/val
+src/embed_lstm.py:98 - 2025-03-12 04:26:09 - INFO - Found 10 classes
+src/embed_lstm.py:94 - 2025-03-12 04:26:09 - INFO - Loading embeddings and labels for ./data/google/siglip-base-patch16-224/frames_embeddings/test
+src/embed_lstm.py:98 - 2025-03-12 04:26:09 - INFO - Found 10 classes
+src/embed_lstm.py:118 - 2025-03-12 04:26:10 - INFO - Train embeddings shape: torch.Size([15714, 768]) || Val embeddings shape: torch.Size([3213, 768]) || Test embeddings shape: torch.Size([3294, 768])
+src/embed_lstm.py:217 - 2025-03-12 04:26:10 - INFO - Loading data: training samples: 15714 || validation samples: 3213 || test samples: 3294
+src/embed_lstm.py:222 - 2025-03-12 04:26:10 - INFO - Initializing LSTM Network: input size: 768 || hidden size: 256 || number of classes: 10
+src/embed_lstm.py:141 - 2025-03-12 04:26:10 - INFO - Training model for 50 epochs
+src/embed_lstm.py:170 - 2025-03-12 04:26:12 - INFO - Epoch 1 || Training Loss: 1.414798 || Val Acc.: 0.47
+src/embed_lstm.py:173 - 2025-03-12 04:26:12 - INFO - Saving model at epoch 1 with val accuracy: 0.47
+src/embed_lstm.py:170 - 2025-03-12 04:26:14 - INFO - Epoch 2 || Training Loss: 0.968312 || Val Acc.: 0.52
+src/embed_lstm.py:173 - 2025-03-12 04:26:14 - INFO - Saving model at epoch 2 with val accuracy: 0.52
+src/embed_lstm.py:170 - 2025-03-12 04:26:16 - INFO - Epoch 3 || Training Loss: 0.738789 || Val Acc.: 0.52
+src/embed_lstm.py:170 - 2025-03-12 04:26:18 - INFO - Epoch 4 || Training Loss: 0.555104 || Val Acc.: 0.56
+src/embed_lstm.py:173 - 2025-03-12 04:26:18 - INFO - Saving model at epoch 4 with val accuracy: 0.56
+src/embed_lstm.py:170 - 2025-03-12 04:26:20 - INFO - Epoch 5 || Training Loss: 0.406511 || Val Acc.: 0.56
+src/embed_lstm.py:170 - 2025-03-12 04:26:22 - INFO - Epoch 6 || Training Loss: 0.304834 || Val Acc.: 0.57
+src/embed_lstm.py:173 - 2025-03-12 04:26:22 - INFO - Saving model at epoch 6 with val accuracy: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:26:24 - INFO - Epoch 7 || Training Loss: 0.230964 || Val Acc.: 0.58
+src/embed_lstm.py:173 - 2025-03-12 04:26:24 - INFO - Saving model at epoch 7 with val accuracy: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:26 - INFO - Epoch 8 || Training Loss: 0.163396 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:26:28 - INFO - Epoch 9 || Training Loss: 0.136372 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:30 - INFO - Epoch 10 || Training Loss: 0.109201 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:26:32 - INFO - Epoch 11 || Training Loss: 0.093247 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:34 - INFO - Epoch 12 || Training Loss: 0.073292 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:36 - INFO - Epoch 13 || Training Loss: 0.062066 || Val Acc.: 0.59
+src/embed_lstm.py:173 - 2025-03-12 04:26:36 - INFO - Saving model at epoch 13 with val accuracy: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:26:38 - INFO - Epoch 14 || Training Loss: 0.058058 || Val Acc.: 0.59
+src/embed_lstm.py:173 - 2025-03-12 04:26:38 - INFO - Saving model at epoch 14 with val accuracy: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:26:40 - INFO - Epoch 15 || Training Loss: 0.058782 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:42 - INFO - Epoch 16 || Training Loss: 0.047460 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:44 - INFO - Epoch 17 || Training Loss: 0.054033 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:46 - INFO - Epoch 18 || Training Loss: 0.043330 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:26:48 - INFO - Epoch 19 || Training Loss: 0.055493 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:26:50 - INFO - Epoch 20 || Training Loss: 0.025907 || Val Acc.: 0.60
+src/embed_lstm.py:173 - 2025-03-12 04:26:50 - INFO - Saving model at epoch 20 with val accuracy: 0.60
+src/embed_lstm.py:170 - 2025-03-12 04:26:52 - INFO - Epoch 21 || Training Loss: 0.048816 || Val Acc.: 0.60
+src/embed_lstm.py:173 - 2025-03-12 04:26:52 - INFO - Saving model at epoch 21 with val accuracy: 0.60
+src/embed_lstm.py:170 - 2025-03-12 04:26:54 - INFO - Epoch 22 || Training Loss: 0.039374 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:26:56 - INFO - Epoch 23 || Training Loss: 0.035176 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:26:58 - INFO - Epoch 24 || Training Loss: 0.041489 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:00 - INFO - Epoch 25 || Training Loss: 0.023652 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:03 - INFO - Epoch 26 || Training Loss: 0.038234 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:27:05 - INFO - Epoch 27 || Training Loss: 0.032631 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:27:07 - INFO - Epoch 28 || Training Loss: 0.031411 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:09 - INFO - Epoch 29 || Training Loss: 0.012676 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:27:11 - INFO - Epoch 30 || Training Loss: 0.048880 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:13 - INFO - Epoch 31 || Training Loss: 0.004502 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:15 - INFO - Epoch 32 || Training Loss: 0.073745 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:27:17 - INFO - Epoch 33 || Training Loss: 0.022716 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:19 - INFO - Epoch 34 || Training Loss: 0.008846 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:27:21 - INFO - Epoch 35 || Training Loss: 0.060752 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:27:23 - INFO - Epoch 36 || Training Loss: 0.014468 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:25 - INFO - Epoch 37 || Training Loss: 0.020636 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:27 - INFO - Epoch 38 || Training Loss: 0.011496 || Val Acc.: 0.53
+src/embed_lstm.py:170 - 2025-03-12 04:27:29 - INFO - Epoch 39 || Training Loss: 0.056463 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:27:31 - INFO - Epoch 40 || Training Loss: 0.013861 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:27:34 - INFO - Epoch 41 || Training Loss: 0.030439 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:36 - INFO - Epoch 42 || Training Loss: 0.014482 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:27:38 - INFO - Epoch 43 || Training Loss: 0.043705 || Val Acc.: 0.57
+src/embed_lstm.py:170 - 2025-03-12 04:27:40 - INFO - Epoch 44 || Training Loss: 0.019838 || Val Acc.: 0.60
+src/embed_lstm.py:173 - 2025-03-12 04:27:40 - INFO - Saving model at epoch 44 with val accuracy: 0.60
+src/embed_lstm.py:170 - 2025-03-12 04:27:42 - INFO - Epoch 45 || Training Loss: 0.003024 || Val Acc.: 0.60
+src/embed_lstm.py:173 - 2025-03-12 04:27:42 - INFO - Saving model at epoch 45 with val accuracy: 0.60
+src/embed_lstm.py:170 - 2025-03-12 04:27:44 - INFO - Epoch 46 || Training Loss: 0.001537 || Val Acc.: 0.60
+src/embed_lstm.py:170 - 2025-03-12 04:27:46 - INFO - Epoch 47 || Training Loss: 0.080970 || Val Acc.: 0.58
+src/embed_lstm.py:170 - 2025-03-12 04:27:49 - INFO - Epoch 48 || Training Loss: 0.008891 || Val Acc.: 0.59
+src/embed_lstm.py:170 - 2025-03-12 04:27:51 - INFO - Epoch 49 || Training Loss: 0.007683 || Val Acc.: 0.56
+src/embed_lstm.py:170 - 2025-03-12 04:27:53 - INFO - Epoch 50 || Training Loss: 0.043861 || Val Acc.: 0.58
+src/embed_lstm.py:178 - 2025-03-12 04:27:53 - INFO - Best Model Saved ./siglip-cricket-classifier.pt: Max Val Acc. 0.60 at epoch 45
+src/embed_lstm.py:182 - 2025-03-12 04:27:53 - INFO - Testing model
+src/embed_lstm.py:200 - 2025-03-12 04:27:53 - INFO - Test Acc.: 0.53
+src/embed_lstm.py:202 - 2025-03-12 04:27:53 - INFO - Confusion Matrix:
+src/embed_lstm.py:203 - 2025-03-12 04:27:53 - INFO - [[ 99   0   5  28  14  38  19  38  11  21]
+ [  0 355   3   1  16   3   6   4   8   1]
+ [ 18  10 105  23  11  20  13  47  10   3]
+ [  8   0   3 166  10  33  20   7  11  22]
+ [ 18   6   2   4 126  32  26  13  18  37]
+ [ 28   0  16  30   2 366  68  25  16  21]
+ [ 31   0  12   7  21  31 101  19   9  16]
+ [ 47   0  46  22  13  38  21  68  11  26]
+ [ 28   2  23  12   9  43  12  23 199  22]
+ [ 20   2   1  19   4  54  20  10  16 172]]
+src/embed_lstm.py:206 - 2025-03-12 04:27:53 - INFO - Classification Report:
+src/embed_lstm.py:207 - 2025-03-12 04:27:53 - INFO -               precision    recall  f1-score   support
+
+       cover       0.33      0.36      0.35       273
+     defense       0.95      0.89      0.92       397
+       flick       0.49      0.40      0.44       260
+        hook       0.53      0.59      0.56       280
+    late_cut       0.56      0.45      0.50       282
+      lofted       0.56      0.64      0.60       572
+        pull       0.33      0.41      0.37       247
+  square_cut       0.27      0.23      0.25       292
+    straight       0.64      0.53      0.58       373
+       sweep       0.50      0.54      0.52       318
+
+    accuracy                           0.53      3294
+   macro avg       0.52      0.51      0.51      3294
+weighted avg       0.54      0.53      0.53      3294
+
