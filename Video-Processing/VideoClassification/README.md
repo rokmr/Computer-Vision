@@ -1,3 +1,12 @@
+
+## Demo : [![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/rokmr/cricketshot) 
+
+The demo allows you to:
+- Upload cricket shot videos
+- Get real-time shot classification predictions
+- View confidence scores for predictions
+
+
 # Video Classification Project
 
 This project implements video classification using two different approaches:
