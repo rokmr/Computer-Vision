@@ -11,4 +11,3 @@ Methods
 - [DINO](detection/DINO.md)
 - [InternImage](detection/InternImage.md)
 - [OWL](detection/OWL.md)
-- [ALL-E](detection/ALL_E.md)
