@@ -61,7 +61,88 @@ Issues
 
 1. Performing feature extraction over the image before proposing regions, thus only running one CNN over the entire image instead of 2000 CNN’s over 2000 overlapping regions.
 2. After conv5 there is FC layer we need to make all the deature size need to be of same size using RoI Pooling layer.
+3. Replacing the SVM with a softmax layer, thus extending the neural network for predictions instead of creating a new model
 
-[RoI Pooling Layer Image]
+<div  align='center'>
+<img src='../../assets/RoIPoolingLayer.png'  height=300 width= 370>
+</div>
 
 # [Faster RCNN](https://arxiv.org/pdf/1506.01497)
+- Removes region proposal network
+Can we reuse our CNN feature and still be able to create this proposal.
+
+<div align='center'>
+<img src='../../assets/FasterRCNN.png' height=200 width= 200>
+<img src='../../assets/FasterRCNNRPN.png' height=200 width= 300>
+</div>
+
+How to extract proposals.
+
+- How many proposals?
+     - Decide a fix number
+     - set of 9 anchor box per location (3 scales, 3 aspect ratio)
+
+- Where are they placed?
+    - Densly
+
+1. For each of the location get the descriptor of 256-d by 3X3 filtermap
+
+2. Pass the descriptor to the cls layer and reg layer
+
+<div align='center'>
+<img src='../../assets/FasterRCNNRPNExplained.png'>
+</div>
+
+## Training
+Classification Ground-Truth
+
+$p^{*}$ Amount of anchor box overlapping with the Ground-Truth.
+
+$p^{*} = 1$ if IoU > 0.7 (anchor is in foreground)
+
+$p^{*} = 0$ if IoU < 0.3 (anchor is in background)
+
+For training only consider above two case.
+
+
+1. Randomly sample 256 sample, form mini-batch.
+2. Calculate binary CE loss
+3. Anchor box containing object will go through regression box
+
+Anchor box $(x_a, y_a, w_a, h_a)$, $x_a, y_a$ is center of box and rest width and height respectively.
+
+4. Network actually predicts are $(t_x, t_y, t_w, t_h)$ which are relative.
+
+$t_x = (x-x_a)/w_a$
+
+$t_y = (y-y_a)/h_a$
+
+$t_w = \log(w/w_a)$
+
+$t_h = \log(h/h_a)$
+
+5. Smooth L1 loss on regression targets
+
+6. Can be train jointly. But in paper it is trained in following manner.
+    - RPN classification (object/non-object)
+    - RPN regression (anchor -> proposal)
+    - Fast R-CNN classification (type of object)
+    - Fast R-CNN regression (proposal -> box)
+
+<div align='center'>
+<img src='../../assets/FasterRCNNTraining.png'>
+</div>
+
+**Pros**
+
+1. 10x faster at test time wrt Fast R-CNN
+2. Trained end-to-end including feature extraction, region proposals, classifier and regressor.
+3. More accurate, since proposals are learned. RPN is fully convolutional.
+
+# Conclusion
+
+|                           | R-CNN | Fast RCNN | Faster RCNN |
+|---------------------------|-------|-----------|-------------|
+| Test time per image (sec) | 50    | 2         | 0.2         |
+| Speeed-Up                 | 1X    | 25X       | 250X        |
+| mAP (VOC 2007)            | 66.0  | 66.9      | 66.9        |

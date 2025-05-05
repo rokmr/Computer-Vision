@@ -1,5 +1,5 @@
 # Object Detection
-The goal of object detection is to predict a set of bounding boxes and category labels for each object of interest.
+The goal of object detection is to predict a set of bounding boxes(x,y,w,h) and category labels for each object of interest.
 
 <div>
 <img src='../assets/ObjectDetection.png'>
@@ -76,6 +76,8 @@ Do not allow the bbos if they are overlapping more than $\lambda_{NMS}$ threshol
 Narrrow Threshold (High IoU) : Low Precision (More False Positive)
 Wide Threshold (Low IoU): Low Recall (More False Negative)
 
+#### Localization
+
 ### Two-Stage Detector
 
 - R-CNN, Fast R-CNN, Faster R-CNN
@@ -84,6 +86,9 @@ Wide Threshold (Low IoU): Low Recall (More False Negative)
 <div>
 <img src='../assets/TwoStageDetector.png'>
 </div>
+
+- [Overfeat](detection/Overfeat.md)
+- [RCNN](detection/RCNN.md)
 
 ### One-Stage Detector
 
@@ -95,8 +100,11 @@ Wide Threshold (Low IoU): Low Recall (More False Negative)
 </div>
 
 
+
+
+
 # Methods
-- [RCNN](detection/RCNN.md)
+
 - [SSD](detection/SSD.md)
 - [YOLO](detection/YOLO.md)
 - [RetinaNet](detection/RetinaNet.md)
