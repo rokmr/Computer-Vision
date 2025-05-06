@@ -1,3 +1,10 @@
+# Content
+1. [RCNN](#rcnn)
+2. [SPP-Net](#spp-net)
+3. [Fast RCNN](#fast-rcnn)
+4. [Faster RCNN](#faster-rcnn)
+5. [Conclusion](#conclusion)
+
 # [RCNN](https://arxiv.org/pdf/1311.2524)
 
 <div>
@@ -12,7 +19,11 @@ Steps
 
 3. Run a convolutional neural net (CNN) on top of each of these region proposals
 
-4. Make the output of each CNN and feed it into a) an SVM to classify the region and b) a linear regressor to tighten the bounding box of the object, if such an object exists.
+4. Make the output of each CNN and feed it into:
+
+     a) an SVM to classify the region and 
+     
+     b) a linear regressor to tighten the bounding box of the object, if such an object exists.
 
 <div>
 <img src='../../assets/RCNN.png'>
@@ -44,7 +55,7 @@ Makes the RCNN fast at test time.
 <img src='../../assets/SPPNet.png'>
 </div>
 
-Issues
+**Issues**
 
 1. Training is slow and complex(no end-to-end)
 
@@ -87,14 +98,19 @@ How to extract proposals.
 
 1. For each of the location get the descriptor of 256-d by 3X3 filtermap
 
-2. Pass the descriptor to the cls layer and reg layer
+2. Pass the descriptor to the classification layer and regression layer
 
+
+
+## RPN Training
 <div align='center'>
 <img src='../../assets/FasterRCNNRPNExplained.png'>
+<figcaption>
+Region Proposal Network
+</figcaption>
 </div>
 
-## Training
-Classification Ground-Truth
+**Classification Ground-Truth**
 
 $p^{*}$ Amount of anchor box overlapping with the Ground-Truth.
 
@@ -123,7 +139,8 @@ $t_h = \log(h/h_a)$
 
 5. Smooth L1 loss on regression targets
 
-6. Can be train jointly. But in paper it is trained in following manner.
+## Faster RCNN Training
+Can be train jointly. But in paper it is trained in following manner.
     - RPN classification (object/non-object)
     - RPN regression (anchor -> proposal)
     - Fast R-CNN classification (type of object)
