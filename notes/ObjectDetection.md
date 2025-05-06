@@ -1,4 +1,14 @@
 # Object Detection
+# Content
+1. [Introduction](#introduction)
+2. [Metrices](https://github.com/rokmr/Machine-Learning/blob/main/notes/Metrices.md)
+3. [Traditional](#traditional)
+4. [General Object Detection](#general-object-detection)
+    - [One-Stage Detector](#two-stage-detector)
+    - [One-Stage Detector](#one-stage-detector)
+    - [Transformer-Based Detector](#transformer-based-detector)
+
+# Introduction
 The goal of object detection is to predict a set of bounding boxes(x,y,w,h) and category labels for each object of interest.
 
 <div>
@@ -35,11 +45,16 @@ histogram based on gradient direction
 <img src='https://scikit-image.org/docs/0.25.x/_images/sphx_glr_plot_hog_001.png'>
 </div>
 
+**Deformable Part Model (DPM)** Based on HOG features but based on body part detection. More robust to different body poses.
+<div>
+<img src='../assets/DPM.png'>
+</div>
+
 ### Classification
 It is done with the help of SVM.
 
 
-## General Object Detection
+# General Object Detection
 
 - Class agnostic
 - Object Proposals / Region of Intrest
@@ -47,38 +62,14 @@ It is done with the help of SVM.
     - Edge boxes
 
 
-### Non-Maxium Supression (NMS)
-<div>
-<img src='https://thepythoncode.com/media/articles/non-maximum-suppression-using-opencv-in-python/non-max-suppression.webp'>
-</div>
+**Localization**
 
 <div>
-<img src='../assets/NMSAlgo.png'>
+<img src='../assets/Localization.png'>
 </div>
 
-#### IoU
-If two bbox ahve both Intersection and union high then the IoU will be high.
-Assume two case :
 
-1. Intersion is large but the bbox are also very large bbox this leads to very high union depicting same same object.
-2. Intersion is large but the bbox are small bbox then possibly they are dipicting different object.
-
-<div>
-<img src='../assets/IoU.png'>
-</div>
-
-#### [$\lambda_{NMS}$](https://arxiv.org/pdf/1511.06437)
-Do not allow the bbos if they are overlapping more than $\lambda_{NMS}$ threshold.
-<div>
-<img src='../assets/NMSIssue.png'>
-</div>
-
-Narrrow Threshold (High IoU) : Low Precision (More False Positive)
-Wide Threshold (Low IoU): Low Recall (More False Negative)
-
-#### Localization
-
-### Two-Stage Detector
+## Two-Stage Detector
 
 - R-CNN, Fast R-CNN, Faster R-CNN
 - SPP-Net, R-FCN, FPN
@@ -88,9 +79,13 @@ Wide Threshold (Low IoU): Low Recall (More False Negative)
 </div>
 
 - [Overfeat](detection/Overfeat.md)
-- [RCNN](detection/RCNN.md)
+- [R-CNN, Fast R-CNN, Faster R-CNN, SPP-Net](detection/RCNN.md)
 
-### One-Stage Detector
+## One-Stage Detector
+
+No need of Region Proposal Network
+
+They are very fast
 
 - YOLO, SSD, RetinaNet
 - CenterNet, CornerNet, ExtremeNet
@@ -99,16 +94,16 @@ Wide Threshold (Low IoU): Low Recall (More False Negative)
 <img src='../assets/OneStageDetector.png'>
 </div>
 
-
-
-
-
-# Methods
-
-- [SSD](detection/SSD.md)
 - [YOLO](detection/YOLO.md)
 - [RetinaNet](detection/RetinaNet.md)
+- [CornerNet](detection/CornerNet.md)
+- [CenterNet](detection/CenterNet.md)
+- [ExtremeNet](detection/ExtremeNet.md)
+
+## Transformer-Based Detector
 - [DETR](detection/DETR.md)
+
+# Methods
 - [Swin Transformer](detection/SwinTransformer.md)
 - [DINO](detection/DINO.md)
 - [InternImage](detection/InternImage.md)
