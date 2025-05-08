@@ -11,8 +11,8 @@
 # Introduction
 The goal of object detection is to predict a set of bounding boxes(x,y,w,h) and category labels for each object of interest.
 
-<div>
-<img src='../assets/ObjectDetection.png'>
+<div align='center'>
+<img src='../assets/ObjectDetection.png'height=150>
 </div>
 
 # Traditional
@@ -33,21 +33,21 @@ Learn multiple weak classifier to build a strong final decision.
 **Viola-Jones Detector**
 
 Haar Features
-<div>
-<img src='https://upload.wikimedia.org/wikipedia/commons/8/8a/Haar_Feature_that_looks_similar_to_the_bridge_of_the_nose_is_applied_onto_the_face.jpg'>
-<img src='https://upload.wikimedia.org/wikipedia/commons/6/69/Haar_Feature_that_looks_similar_to_the_eye_region_which_is_darker_than_the_upper_cheeks_is_applied_onto_a_face.jpg'>
+<div align='center'>
+<img src='https://upload.wikimedia.org/wikipedia/commons/8/8a/Haar_Feature_that_looks_similar_to_the_bridge_of_the_nose_is_applied_onto_the_face.jpg' height=100>
+<img src='https://upload.wikimedia.org/wikipedia/commons/6/69/Haar_Feature_that_looks_similar_to_the_eye_region_which_is_darker_than_the_upper_cheeks_is_applied_onto_a_face.jpg'height=100>
 </div>
 
 **Histogram of Oriented Gradients(HOGs)**
 Compute gradients in dense grids, compute gradients and create a
 histogram based on gradient direction
-<div>
-<img src='https://scikit-image.org/docs/0.25.x/_images/sphx_glr_plot_hog_001.png'>
+<div align='center'>
+<img src='https://scikit-image.org/docs/0.25.x/_images/sphx_glr_plot_hog_001.png'height=200>
 </div>
 
 **Deformable Part Model (DPM)** Based on HOG features but based on body part detection. More robust to different body poses.
-<div>
-<img src='../assets/DPM.png'>
+<div align='center'>
+<img src='../assets/DPM.png' height=150>
 </div>
 
 ### Classification
@@ -64,8 +64,8 @@ It is done with the help of SVM.
 
 **Localization**
 
-<div>
-<img src='../assets/Localization.png'>
+<div align='center'>
+<img src='../assets/Localization.png' height=150>
 </div>
 
 
@@ -74,8 +74,8 @@ It is done with the help of SVM.
 - R-CNN, Fast R-CNN, Faster R-CNN
 - SPP-Net, R-FCN, FPN
 
-<div>
-<img src='../assets/TwoStageDetector.png'>
+<div align='center'>
+<img src='../assets/TwoStageDetector.png' height=150>
 </div>
 
 - [Overfeat](detection/Overfeat.md)
@@ -90,8 +90,8 @@ They are very fast
 - YOLO, SSD, RetinaNet
 - CenterNet, CornerNet, ExtremeNet
 
-<div>
-<img src='../assets/OneStageDetector.png'>
+<div align='center'>
+<img src='../assets/OneStageDetector.png' height=150>
 </div>
 
 - [YOLO](detection/YOLO.md)
