@@ -1,6 +1,7 @@
 # Content
 1. [YOLO](#yolo)
-2. [YOLO Paper](#yolo-papers)
+2. [YOLO-World](YOLO-World)
+3. [YOLO Paper](#yolo-papers)
 
 
 # YOLO
@@ -81,4 +82,5 @@ $\lambda_{noobj} = 0.5$
 #### [YOLO-v7](https://arxiv.org/pdf/2207.02696) || [colab](https://colab.research.google.com/gist/AlexeyAB/b769f5795e65fdab80086f6cb7940dae/yolov7detection.ipynb)
 
 #### [YOLO-v8]()
+
 #### [YOLO-NAS]()
