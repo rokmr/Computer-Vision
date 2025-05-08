@@ -15,8 +15,8 @@
 | 10.   | Image Classification          |                                            |                                             |
 | 11.   | Image Segmentation            |                                            |                                             |
 | 12.   | Edge Detection & Contours     |                                            |                                             |
-| 13.   | Face Detection                | [note](notes/FaceDetection.md)             |                                             |
-| 14.   | Object Detection              | [note](notes/ObjectDetection.md)           |                                             |
+| 13.   | Object Detection              | [note](notes/ObjectDetection.md)           |                                             |
+| 14.   | Face Detection                | [note](notes/FaceDetection.md)             |                                             |
 | 15.   | Optical Flow                  | [note](notes/OpticalFlow.md)               |                                             |
 | 16.   | Object Tracking               | [note](notes/ObjectTracking.md)            |                                             |
 | 17.   | Pose Estimation               | [note](notes/PoseEstimation.md)            |                                             |

@@ -26,5 +26,3 @@ Corner pooling
 too many False Positives
 - Hypothesis: It is hard to infer the class of the box if the
 network is focused on the boundaries
-
-
