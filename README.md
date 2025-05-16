@@ -1,5 +1,6 @@
 # Computer Vision
 
+## Understanding underlying principle of Computer Vision
 
 | S.No. | Topic                         | Notes                                      | Code                                        |
 |-------|-------------------------------|--------------------------------------------|---------------------------------------------|
@@ -21,4 +22,17 @@
 | 16.   | Object Tracking               | [note](notes/ObjectTracking.md)            |                                             |
 | 17.   | Pose Estimation               | [note](notes/PoseEstimation.md)            |                                             |
 | 18.   | OCR                           |                                            |                                             |
-| 19.   | NeRF                          | [note](assets/NeRF.mov)                    | [code](src/NeRF.ipynb)                      |
+
+
+## Advance Computer Vision
+
+| S.No.| Topic                         | Notes                                      | Code                                                                                                                                                                                            |
+|------|-------------------------------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.   | AutoEncoder                   |                                            | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rokmr/Computer-Vision/blob/main/src/colab/AutoEncoder.ipynb)              |
+| 2.   | ViT                           |                                            | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rokmr/Computer-Vision/blob/main/src/colab/ViT.ipynb)                      |
+| 3.   | NeRF                          | [note](assets/NeRF.mov)                    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rokmr/Computer-Vision/blob/main/src/colab/DeepLearning.ipynb)             |
+
+## Generative Computer Vision
+| S.No.| Topic                         | Notes                                      | Code                                                                                                                                                                                            |
+|------|-------------------------------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.   | Variational AutoEncoder       |                                            |                                                                                                                                                                                                 |
